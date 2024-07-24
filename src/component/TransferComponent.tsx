@@ -1,24 +1,18 @@
 import React, {useState} from 'react';
 import {Money} from '../model/Money';
-import {Account} from '../model/Account';
 import {TransferService} from '../service/TransferService';
 import {MoneyOperations} from '../model/MoneyOperations';
 import {ConvertService} from '../service/ConvertService';
 import styles from '../styles/TransferComponent.module.css';
+import {TransferComponentInterface} from "./interface/TransferComponentInterface";
 
-interface TransferComponentProps {
-    sourceAccount: Account;
-    destAccount: Account;
-    setSourceAccount: React.Dispatch<React.SetStateAction<Account>>;
-    setDestAccount: React.Dispatch<React.SetStateAction<Account>>;
-}
 
-const TransferComponent: React.FC<TransferComponentProps> = ({
-                                                                 sourceAccount,
-                                                                 destAccount,
-                                                                 setSourceAccount,
-                                                                 setDestAccount,
-                                                             }) => {
+const TransferComponent: React.FC<TransferComponentInterface> = ({
+                                                                     sourceAccount,
+                                                                     destAccount,
+                                                                     setSourceAccount,
+                                                                     setDestAccount,
+                                                                 }) => {
     const [amount, setAmount] = useState<Money>({value: 0, currency: 'USD'});
 
     const moneyOperations = new MoneyOperations();

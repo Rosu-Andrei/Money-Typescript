@@ -1,25 +1,19 @@
 import React, {useState} from 'react';
 import {Money} from "../model/Money";
-import {Account} from "../model/Account";
 import {InvestService} from "../service/InvestService";
 import {MoneyOperations} from "../model/MoneyOperations";
 import {TransferService} from "../service/TransferService";
 import {ConvertService} from "../service/ConvertService";
 import styles from '../styles/InvestComponent.module.css';
+import {InvestComponentInterface} from "./interface/InvestComponentInterface";
 
-interface InvestComponentProps {
-    sourceAccount: Account;
-    destAccount: Account;
-    setSourceAccount: React.Dispatch<React.SetStateAction<Account>>;
-    setDestAccount: React.Dispatch<React.SetStateAction<Account>>;
-}
 
-const InvestComponent: React.FC<InvestComponentProps> = ({
-                                                             sourceAccount,
-                                                             destAccount,
-                                                             setSourceAccount,
-                                                             setDestAccount
-                                                         }) => {
+const InvestComponent: React.FC<InvestComponentInterface> = ({
+                                                                 sourceAccount,
+                                                                 destAccount,
+                                                                 setSourceAccount,
+                                                                 setDestAccount
+                                                             }) => {
     const [amount, setAmount] = useState<Money>({value: 0, currency: 'USD'});
     const [rate, setRate] = useState<number>(0);
     const [years, setYears] = useState<number>(1);
@@ -77,7 +71,7 @@ const InvestComponent: React.FC<InvestComponentProps> = ({
 
             <h3>Calculate Returns</h3>
             <div className={styles.inputGroup}>
-                <label className={styles.label} htmlFor="rate">Rate:</label>
+                <label className={styles.label} htmlFor="rate">Rate(%):</label>
                 <input
                     id="rate"
                     type="number"

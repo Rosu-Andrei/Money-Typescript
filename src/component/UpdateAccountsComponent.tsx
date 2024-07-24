@@ -1,20 +1,14 @@
 import React from 'react';
-import {Account} from '../model/Account';
 import styles from '../styles/UpdateAccountsComponent.module.css';
+import {UpdateAccountsComponentInterface} from "./interface/UpdateAccountsComponentInterface";
 
-interface UpdateAccountsComponentProps {
-    sourceAccount: Account;
-    destAccount: Account;
-    setSourceAccount: React.Dispatch<React.SetStateAction<Account>>;
-    setDestAccount: React.Dispatch<React.SetStateAction<Account>>;
-}
 
-const UpdateAccountsComponent: React.FC<UpdateAccountsComponentProps> = ({
-                                                                             sourceAccount,
-                                                                             destAccount,
-                                                                             setSourceAccount,
-                                                                             setDestAccount,
-                                                                         }) => {
+const UpdateAccountsComponent: React.FC<UpdateAccountsComponentInterface> = ({
+                                                                                 sourceAccount,
+                                                                                 destAccount,
+                                                                                 setSourceAccount,
+                                                                                 setDestAccount,
+                                                                             }) => {
     const handleSourceBalanceChange = (value: number, currency: string) => {
         setSourceAccount({balance: {value, currency}});
     };
