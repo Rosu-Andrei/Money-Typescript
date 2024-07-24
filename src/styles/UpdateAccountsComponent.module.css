@@ -1,0 +1,45 @@
+/* src/styles/UpdateAccountsComponent.module.css */
+
+.updateAccountsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.accountGroup {
+    display: flex;
+    gap: 20px;
+}
+
+.account {
+    flex: 1;
+}
+
+.account h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.input,
+.select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.input {
+    box-sizing: border-box;
+}
+
+.select {
+    box-sizing: border-box;
+}
