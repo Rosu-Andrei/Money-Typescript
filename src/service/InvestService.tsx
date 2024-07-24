@@ -28,7 +28,7 @@ export class InvestService implements InvestInterface<Money> {
     }
 
     /**
-     * we consider that the rate is cumulated yearly.
+     * we consider that the rate is cumulated yearly. (compound interest).
      */
     calculateReturns(amount: Money, rate: number, years: number): Money {
         const multiplayer = Math.pow(1 + rate, years);

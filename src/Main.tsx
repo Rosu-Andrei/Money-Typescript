@@ -27,8 +27,8 @@ console.log("Final destination: ", receiverAccount);
 console.log("\n");
 
 
-const investmentAmount = new Money(150, "USD");
-const returns = investService.calculateReturns(investmentAmount, 0.15, 2);
+const investmentAmount = new Money(100, "USD");
+const returns = investService.calculateReturns(investmentAmount, 0.15, 5);
 console.log("returns: ", Math.trunc(returns.value));
 
 
