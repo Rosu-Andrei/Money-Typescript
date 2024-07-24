@@ -1,11 +1,9 @@
-// src/components/ParentComponent.tsx
-
 import React, {useState} from 'react';
 import TransferComponent from "./TransferComponent";
 import InvestComponent from './InvestComponent';
 import UpdateAccountsComponent from './UpdateAccountsComponent';
 import {Money} from '../model/Money';
-import styles from '../styles/Parent.module.css'; // Updated to use CSS module
+import styles from '../styles/Parent.module.css';
 
 const ParentComponent: React.FC = () => {
     const [sourceAccount, setSourceAccount] = useState({

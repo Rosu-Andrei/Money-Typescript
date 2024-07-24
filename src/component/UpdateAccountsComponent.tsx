@@ -1,5 +1,3 @@
-// src/components/UpdateAccountsComponent.tsx
-
 import React from 'react';
 import {Account} from '../model/Account';
 import styles from '../styles/UpdateAccountsComponent.module.css';

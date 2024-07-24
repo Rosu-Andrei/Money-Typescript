@@ -1,5 +1,3 @@
-// src/components/TransferComponent.tsx
-
 import React, {useState} from 'react';
 import {Money} from '../model/Money';
 import {Account} from '../model/Account';
