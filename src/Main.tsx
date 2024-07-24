@@ -10,9 +10,9 @@ import {MoneyInterface} from "./interfaces/MoneyInterface";
 
 const transferService = new TransferService(new MoneyOperations(), new ConvertService());
 const investService: InvestInterface<MoneyInterface> = new InvestService(new MoneyOperations(), transferService);
-const amountToTransfer = new Money(150, "EUR");
-const senderAccount = new Account(new Money(300, "USD"));
-const receiverAccount = new Account(new Money(275, "EUR"));
+const amountToTransfer = new Money(500, "EUR");
+const senderAccount = new Account(new Money(1000, "USD"));
+const receiverAccount = new Account(new Money(500, "USD"));
 
 console.clear();
 console.log("\n");
@@ -27,8 +27,8 @@ console.log("Final destination: ", receiverAccount);
 console.log("\n");
 
 
-const investmentAmount = new Money(150, "USD");
-const returns = investService.calculateReturns(investmentAmount, 0.15, 2);
+const investmentAmount = new Money(100, "USD");
+const returns = investService.calculateReturns(investmentAmount, 0.15, 5);
 console.log("returns: ", Math.trunc(returns.value));
 
 

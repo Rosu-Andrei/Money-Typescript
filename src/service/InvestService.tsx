@@ -28,7 +28,7 @@ export class InvestService implements InvestInterface<Money> {
     }
 
     /**
-     * we consider that the rate is cumulated yearly.
+     * we consider that the rate is cumulated yearly. (compound interest).
      */
     calculateReturns(amount: Money, rate: number, years: number): Money {
         const multiplayer = Math.pow(1 + rate, years);
@@ -37,7 +37,7 @@ export class InvestService implements InvestInterface<Money> {
     }
 
     withdraw(amount: Money, sourceAccount: AccountInterface<Money>, destinationAccount: AccountInterface<Money>): void {
-        this.transferService.transfer(amount, sourceAccount, destinationAccount);
+        this.transferService.transfer(amount, destinationAccount, sourceAccount);
     }
 
 }

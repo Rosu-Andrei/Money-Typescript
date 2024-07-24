@@ -1,0 +1,28 @@
+/* src/styles/ParentComponent.module.css */
+
+.container {
+    display: flex;
+    flex-direction: column; /* Stack components vertically */
+    gap: 20px; /* Adds space between stacked components */
+    padding: 20px;
+}
+
+.cardsContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Adds space between the two cards */
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1; /* Allows the card to grow and shrink as needed */
+    max-width: 600px; /* Limits the maximum width of each card */
+}
+
+.header {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}

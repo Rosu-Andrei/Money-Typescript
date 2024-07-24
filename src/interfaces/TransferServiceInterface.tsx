@@ -1,7 +1,5 @@
 import {MoneyInterface} from "./MoneyInterface";
 import {AccountInterface} from "./AccountInterface";
-import {MoneyOperationInterface} from "./MoneyOperationInterface";
-import {Money} from "../model/Money";
 
 /**
  * Interface for the TransferService.
