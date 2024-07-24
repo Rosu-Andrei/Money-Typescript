@@ -28,7 +28,7 @@ console.log("\n");
 
 
 const investmentAmount = new Money(150, "USD");
-const returns = investService.calculateReturns(investmentAmount, 0.05, 5);
+const returns = investService.calculateReturns(investmentAmount, 0.15, 2);
 console.log("returns: ", Math.trunc(returns.value));
 
 
