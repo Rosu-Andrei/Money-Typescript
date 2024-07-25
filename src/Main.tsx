@@ -30,5 +30,11 @@ console.log("\n");
 const investmentAmount = new Money(100, "USD");
 const returns = investService.calculateReturns(investmentAmount, 0.15, 5);
 console.log("returns: ", Math.trunc(returns.value));
+console.log("\n");
+
+const splitAmount = new Money(100, "EUR");
+
+let monies = new MoneyOperations().split(splitAmount, 6);
+console.log(monies);
 
 

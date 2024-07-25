@@ -1,6 +1,7 @@
 import {MoneyOperationInterface} from "../interfaces/MoneyOperationInterface";
 import {MoneyInterface} from "../interfaces/MoneyInterface";
 import {Money} from "./Money";
+import {DifferentCurrenciesError} from "../exception/DifferentCurrenciesError";
 
 /**
  * This class implements the operations that are possible with money. These are addition, subtraction and splitting.
@@ -8,14 +9,14 @@ import {Money} from "./Money";
 export class MoneyOperations implements MoneyOperationInterface<MoneyInterface> {
     add(m1: Money, m2: Money): Money {
         if (m1.currency !== m2.currency) {
-            throw new Error('Cannot add amounts with different currencies');
+            throw new DifferentCurrenciesError("Cannot add money with different currencies");
         }
         return new Money(m1.value + m2.value, m1.currency);
     }
 
     subtract(m1: Money, m2: Money): Money {
         if (m1.currency !== m2.currency) {
-            throw new Error('Cannot subtract amounts with different currencies');
+            throw new DifferentCurrenciesError("Cannot subtract money with different currencies");
         }
         return new Money(m1.value - m2.value, m1.currency);
     }
@@ -27,6 +28,9 @@ export class MoneyOperations implements MoneyOperationInterface<MoneyInterface> 
         const result: Money[] = [];
 
         for (let i = 0; i < n; i++) {
+            /**
+             * if we don't also take the reminder in consideration, then we won't split the entire value, but only a part of it
+             */
             if (i < remainder) {
                 result.push(new Money(partValue + 1, m.currency));
             } else {
